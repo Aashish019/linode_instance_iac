@@ -12,11 +12,13 @@ provider "linode" {
 }
 
 resource "linode_instance" "my_instance" {
-  label     = "terraform-instance"
-  region    = var.region
-  type      = var.type
-  image     = var.image
-  root_pass = var.root_pass
+  label           = var.linode_label
+  region          = var.region
+  type            = var.type
+  image           = var.image
+  root_pass       = var.root_pass
+  backups_enabled = false
+  private_ip      = true
   #authorized_keys = [file("~/.ssh/id_rsa.pub")] # Change to the correct public SSH key path
 
   #   lifecycle {

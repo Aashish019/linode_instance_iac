@@ -1,3 +1,6 @@
+variable "linode_label" {
+  type = string
+}
 variable "linode_token" {
   sensitive = true
   type      = string
